@@ -1,0 +1,765 @@
+/* Reset e estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #f8f0ff 0%, #ffe6f0 100%);
+    color: #2d2d2d;
+    min-height: 100vh;
+}
+
+
+.navbar {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 3px solid transparent;
+    border-image: linear-gradient(45deg, #ff1493, #9b4dff);
+    border-image-slice: 1;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #4a4a4a;
+    font-weight: 600;
+    transition: all 0.3s;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.nav-links a:hover {
+    color: #ff1493;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(45deg, #ff1493, #9b4dff);
+    transition: width 0.3s;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Container principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Hero section */
+.hero {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: rgba(255,255,255,0.7);
+    border-radius: 30px;
+    margin-bottom: 3rem;
+    border: 2px solid rgba(255,20,147,0.1);
+}
+
+.hero h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    
+}
+/* Grid de eras */
+.eras-section h3 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.eras-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.era-card {
+    padding: 1.5rem 0.5rem;
+    text-align: center;
+    border-radius: 15px;
+    color: white;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    transition: all 0.3s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.era-card:hover {
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* Cores de cada era */
+.debut { background: #b8e0d2; }
+.fearless { background: #f9e076; color: #333; }
+.speak-now { background: #b19cd9; }
+.red { background: #e03a3a; }
+.\31 989 { background: #79ccfc; color: #333; }
+.reputation { background: #2c2c2c; }
+.lover { background: #ffb6c1; color: #333; }
+.folklore { background: #808080; }
+.evermore { background: #8b4513; }
+.midnights { background: #191970; }
+.tortured { background: #4a4a4a; }
+.showgirl { background: #51c5b6; color: #333; }
+
+/* Features */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.feature-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    transition: all 0.3s;
+    border: 2px solid transparent;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    border-color: #ff1493;
+    box-shadow: 0 15px 30px rgba(255,20,147,0.1);
+}
+
+.feature-card h4 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #ff1493;
+}
+
+.feature-link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: #9b4dff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.feature-link:hover {
+    color: #ff1493;
+}
+
+/* Grid de álbuns */
+.albums-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.album-card-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.album-card {
+    background: white;
+    padding: 2rem 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.album-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(255,20,147,0.2);
+    border-left: 5px solid #ff1493;
+}
+
+.album-card h3 {
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-size: 1.3rem;
+}
+
+.release-date {
+    color: #ff1493;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.album-footer {
+    margin-top: auto;
+    color: #9b4dff;
+    font-weight: 600;
+}
+
+/* Grid de músicas */
+.songs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.song-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    transition: all 0.3s;
+    border-left: 3px solid transparent;
+}
+
+.song-card:hover {
+    border-left-color: #ff1493;
+    box-shadow: 0 5px 15px rgba(255,20,147,0.1);
+}
+
+.song-card h4 {
+    color: #333;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.song-album {
+    color: #9b4dff;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.song-duration-badge {
+    display: inline-block;
+    background: #f0f0f0;
+    padding: 0.2rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+/* Lista de músicas (detalhe do álbum) */
+.songs-list {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.song-item {
+    background: white;
+    padding: 1.2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.song-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.song-title {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.song-duration {
+    color: #999;
+    font-size: 0.9rem;
+}
+
+.search-section {
+    margin: 2rem 0;
+}
+
+.search-box {
+    background: white;
+    border-radius: 15px;
+    border: 2px solid rgba(255,20,147,0.2);
+    transition: all 0.3s;
+}
+
+.search-box:hover {
+    border-color: #ff1493;
+}
+
+.search-box summary {
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    font-weight: 600;
+    color: #ff1493;
+    list-style: none;
+    outline: none;
+}
+
+.search-box summary::-webkit-details-marker {
+    display: none;
+}
+
+.search-box[open] summary {
+    border-bottom: 2px solid rgba(255,20,147,0.1);
+    padding-bottom: 1rem;
+}
+
+.search-content {
+    padding: 1.5rem;
+}
+
+.search-form {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.search-form input {
+    flex: 1;
+    padding: 0.8rem 1rem;
+    border: 2px solid #f0f0f0;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.search-form input:focus {
+    outline: none;
+    border-color: #ff1493;
+    box-shadow: 0 0 10px rgba(255,20,147,0.2);
+}
+
+.search-form button {
+    background: #9b4dff;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.search-form button:hover {
+    transform: scale(1.05);
+}
+
+.search-results-info {
+    background: #f8f0ff;
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    color: #666;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.clear-search {
+    color: #ff1493;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.2rem 0.8rem;
+    border-radius: 15px;
+    background: white;
+    transition: all 0.3s;
+}
+
+.clear-search:hover {
+    background: #ff1493;
+    color: white;
+}
+
+.no-results {
+    text-align: center;
+    padding: 3rem;
+    background: white;
+    border-radius: 15px;
+    margin-top: 2rem;
+    color: #666;
+    border: 2px dashed #ff1493;
+}
+
+.no-results p:first-child {
+    font-size: 1.2rem;
+    color: #ff1493;
+    margin-bottom: 0.5rem;
+}
+
+.song-card {
+    transition: all 0.3s;
+}
+
+/* Grid de quotes */
+.quotes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.quote-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    position: relative;
+    transition: all 0.3s;
+    border-bottom: 3px solid transparent;
+}
+
+.quote-card:hover {
+    border-bottom-color: #ff1493;
+    transform: translateY(-5px);
+}
+
+.quote-card::before {
+    content: '"';
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    font-size: 5rem;
+    color: #ff1493;
+    opacity: 0.2;
+    font-family: serif;
+}
+
+.quote-text {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+    color: #333;
+}
+
+.quote-song {
+    color: #ff1493;
+    font-weight: bold;
+    text-align: right;
+}
+
+.quote-album {
+    color: #999;
+    font-size: 0.9rem;
+    text-align: right;
+}
+
+/* Quiz Styles */
+.quiz-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.quiz-card {
+    background: white;
+    border-radius: 30px;
+    padding: 3rem 2rem;
+    box-shadow: 0 10px 30px rgba(255,20,147,0.1);
+    margin-bottom: 2rem;
+    border: 2px solid transparent;
+    background: linear-gradient(white, white) padding-box,
+                linear-gradient(45deg, #ff1493, #9b4dff) border-box;
+}
+
+.quote-display {
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.quote-mark {
+    font-size: 6rem;
+    color: #ff1493;
+    opacity: 0.2;
+    font-family: serif;
+    line-height: 1;
+    display: block;
+    margin-bottom: -2rem;
+}
+
+.quiz-quote {
+    font-size: 1.8rem;
+    line-height: 1.4;
+    font-style: italic;
+    color: #333;
+    margin: 1rem 0;
+    font-family: 'Playfair Display', serif;
+}
+
+.options-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.option-btn {
+    background: white;
+    border: 2px solid #f0f0f0;
+    padding: 1.2rem 1rem;
+    border-radius: 15px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-align: center;
+    width: 100%;
+}
+
+.option-btn:hover {
+    border-color: #ff1493;
+    background: linear-gradient(45deg, #fff0f7, #fff);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255,20,147,0.2);
+}
+
+.quiz-footer {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 2px dashed #f0f0f0;
+}
+
+.quiz-tip {
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.new-quiz-btn {
+    display: inline-block;
+    background: #ff1493;
+    color: white;
+    text-decoration: none;
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.new-quiz-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 20px rgba(255,20,147,0.4);
+}
+
+.quiz-stats {
+    background: rgba(255,255,255,0.7);
+    border-radius: 20px;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+.quiz-stats h4 {
+    color: #ff1493;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.quiz-stats ul {
+    list-style: none;
+    padding: 0;
+}
+
+.quiz-stats li {
+    padding: 0.5rem 0;
+    color: #666;
+    font-size: 1.1rem;
+}
+
+/* Result styles */
+.result-card {
+    background: white;
+    border-radius: 30px;
+    padding: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.result-card.correct {
+    border: 3px solid #4CAF50;
+}
+
+.result-card.incorrect {
+    border: 3px solid #f44336;
+}
+
+.result-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.result-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.result-message {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.next-quiz-card {
+    background: white;
+    border-radius: 30px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(255,20,147,0.1);
+}
+
+.next-quiz-card h3 {
+    color: #ff1493;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.quote-display.small .quiz-quote {
+    font-size: 1.4rem;
+}
+
+.result-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.view-quotes-btn {
+    display: inline-block;
+    background: white;
+    color: #9b4dff;
+    text-decoration: none;
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    font-weight: 600;
+    border: 2px solid #9b4dff;
+    transition: all 0.3s;
+}
+
+.view-quotes-btn:hover {
+    background: #9b4dff;
+    color: white;
+}
+
+
+/* Cabeçalhos de página */
+.page-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.page-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.page-description {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+/* Botão voltar */
+.back-link {
+    display: inline-block;
+    margin-bottom: 2rem;
+    color: #666;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.back-link:hover {
+    color: #ff1493;
+    transform: translateX(-5px);
+}
+
+/* Empty state */
+.empty-state {
+    text-align: center;
+    padding: 4rem;
+    background: white;
+    border-radius: 20px;
+    color: #999;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 3rem 2rem 2rem;
+    color: #666;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    margin-top: 4rem;
+    background: rgba(255,255,255,0.5);
+}
+
+.footer-quote {
+    font-family: 'Playfair Display', serif;
+    color: #ff1493;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+}
+
+/* Error page */
+.error-container {
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.error-message {
+    color: #ff1493;
+    margin: 1rem 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .nav-links {
+        gap: 1.5rem;
+    }
+    
+    .hero h2 {
+        font-size: 2rem;
+    }
+    
+    .eras-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

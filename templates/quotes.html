@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="page-header">
+    <h2>💬 Frases Icônicas</h2>
+    <p class="page-description">"And you call me up again just to break me like a promise"</p>
+</div>
+
+<div class="quotes-grid">
+    {% for quote in quotes %}
+    <div class="quote-card">
+        <p class="quote-text">"{{ quote.quote or quote.text }}"</p>
+        {% if quote.song %}
+        <p class="quote-song">— {{ quote.song }}</p>
+        {% endif %}
+        {% if quote.album %}
+        <p class="quote-album">{{ quote.album }}</p>
+        {% endif %}
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

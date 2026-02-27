@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="erro404">
+    <img src="../static/images/erro404.jpg">
+    <p>Página não encontrada. ERRO 404</p>
+    <a href="/"><button>Voltar a página inicial...</button></a>
+</div>
+<style>
+.erro404 {
+    text-align: center;
+    padding: 50px;
+}
+.erro404 img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+.erro404 p {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 30px;
+}
+.erro404 button {
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+</style>
+
+{% endblock %}

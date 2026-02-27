@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="page-header">
+    <h2>📀 Todos os Álbuns</h2>
+    <p class="page-description">Clique em qualquer álbum para ver todas as músicas</p>
+</div>
+
+<div class="albums-grid">
+    {% for album in albums %}
+    {% set album_id = album.id or album._id or album.albumId or loop.index %}
+    {% set album_title = album.title or album.name or "Álbum sem título" %}
+    <a href="/album/{{ album_id }}" class="album-card-link">
+        <div class="album-card">
+            <h3>{{ album_title }}</h3>
+            {% if album.releaseDate or album.year or album.release_year %}
+            <p class="release-date">{{ album.releaseDate or album.year or album.release_year }}</p>
+            {% endif %}
+            <div class="album-footer">
+                <span class="view-songs">Ver músicas →</span>
+            </div>
+        </div>
+    </a>
+    {% endfor %}
+</div>
+{% endblock %}

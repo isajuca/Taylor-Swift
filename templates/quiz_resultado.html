@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="quiz-container">
+    <div class="result-card {% if is_correct %}correct{% else %}incorrect{% endif %}">
+        {% if is_correct %}
+        <div class="result-icon">🎉</div>
+        <h2 class="result-title">PARABÉNS! 🎯</h2>
+        <p class="result-message">Você acertou! A música é "{{ correct }}"</p>
+        {% else %}
+        <div class="result-icon">😢</div>
+        <h2 class="result-title">Quase lá!</h2>
+        <p class="result-message">Você escolheu "{{ selected }}"</p>
+        <p class="result-message">A música correta era "{{ correct }}"</p>
+        {% endif %}
+    </div>
+
+    <div class="next-quiz-card">
+        <h3>🎵 Próxima frase:</h3>
+            <p class="quiz-quote">"{{ quote.quote }}"</p>
+        </div>
+
+        <form action="{{ url_for('check_answer') }}" method="POST" class="quiz-form">
+            <input type="hidden" name="correct" value="{{ correct_song }}">
+            
+            <div class="options-grid">
+                {% for option in options %}
+                <button type="submit" name="selected" value="{{ option }}" class="option-btn">
+                    {{ option }}
+                </button>
+                {% endfor %}
+            </div>
+        </form>
+
+        <div class="result-actions">
+            <a href="/quiz" class="new-quiz-btn">🔄 Recomeçar jogo</a>
+            <a href="/" class="view-quotes-btn">🏠 Voltar ao início</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

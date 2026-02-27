@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+<a href="/albums" class="back-link">← Voltar para todos os álbuns</a>
+
+<div class="album-header">
+    <h2>{{ album.title or album.name or "Álbum" }}</h2>
+    {% if album.releaseDate or album.year or album.release_year %}
+    <p class="album-year">Lançado em {{ album.releaseDate or album.year or album.release_year }}</p>
+    {% endif %}
+</div>
+
+<h3 class="tracklist-title">🎵 Tracklist</h3>
+
+{% if songs %}
+<div class="songs-list">
+    {% for song in songs %}
+    <div class="song-item">
+        <div class="song-info">
+            <span class="song-title">{{ song.title or song.name or "Música sem título" }}</span>
+            {% if song.duration or song.length %}
+            <span class="song-duration">{{ song.duration or song.length }}</span>
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% else %}
+<div class="empty-state">
+    <p>✨ Nenhuma música encontrada para este álbum ✨</p>
+    <p style="font-size: 0.9rem; margin-top: 1rem;">Mas não se preocupe, todas as músicas são masterpieces!</p>
+</div>
+{% endif %}
+{% endblock %}

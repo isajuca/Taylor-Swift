@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swiftieverse</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="static/images/logo.png" type="image/x-icon">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo"><img src="../static/images/logo2.png" alt="Logo Swiftieverse" height="90px"></h1>
+            <ul class="nav-links">
+                <li><a href="/">Início</a></li>
+                <li><a href="/albums">Álbuns</a></li>
+                <li><a href="/songs">Músicas</a></li>
+                <li><a href="/quotes">Frases</a></li>
+                <li><a href="/quiz">Quiz</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="footer">
+        <p>Feito com 💖 por uma Swiftie para Swifties</p>
+        <p class="footer-quote">"Long live all the magic we made"</p>
+    </footer>
+</body>
+</html>

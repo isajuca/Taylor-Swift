@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero">
+    <div class="hero-content">
+        <h2>Bem-vindo ao Swiftieverse</h2>
+        <p>Explore toda a discografia, descubra músicas e mergulhe no universo mágico da Taylor Swift!</p>
+    </div>
+</section>
+
+<section class="eras-section">
+    <h3>As Eras da Taylor</h3>
+    <div class="eras-grid">
+        <div class="era-card debut">Taylor Swift (2006)</div>
+        <div class="era-card fearless">Fearless (2008)</div>
+        <div class="era-card speak-now">Speak Now (2010)</div>
+        <div class="era-card red">Red (2012)</div>
+        <div class="era-card 1989">1989 (2014)</div>
+        <div class="era-card reputation">Reputation (2017)</div>
+        <div class="era-card lover">Lover (2019)</div>
+        <div class="era-card folklore">Folklore (2020)</div>
+        <div class="era-card evermore">Evermore (2020)</div>
+        <div class="era-card midnights">Midnights (2022)</div>
+        <div class="era-card tortured">The tortured Poets Department (2024)</div>
+        <div class="era-card showgirl">The Life of a Showgirl (2025)</div>
+    </div>
+</section>
+
+<section class="features">
+    <div class="feature-card">
+        <h4>📀 Álbuns</h4>
+        <p>Explore todos os álbuns, das estreias aos mais recentes</p>
+        <a href="/albums" class="feature-link">Ver álbuns →</a>
+    </div>
+    <div class="feature-card">
+        <h4>🎵 Músicas</h4>
+        <p>Descubra todas as músicas com letras completas</p>
+        <a href="/songs" class="feature-link">Ver músicas →</a>
+    </div>
+    <div class="feature-card">
+        <h4>💬 Frases</h4>
+        <p>As melhores frases para você se inspirar</p>
+        <a href="/quotes" class="feature-link">Ver frases →</a>
+    </div>
+</section>
+{% endblock %}

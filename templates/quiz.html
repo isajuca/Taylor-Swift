@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="quiz-container">
+    <div class="page-header">
+        <h2>🎮 Quiz Swiftie</h2>
+        <p class="page-description">Adivinhe de qual música é essa frase!</p>
+    </div>
+
+    <div class="quiz-card">
+        <div class="quote-display">
+            <span class="quote-mark">"</span>
+            <p class="quiz-quote">{{ quote.quote }}</p>
+        </div>
+
+        <form action="{{ url_for('check_answer') }}" method="POST" class="quiz-form">
+            <input type="hidden" name="correct" value="{{ correct_song }}">
+            
+            <div class="options-grid">
+                {% for option in options %}
+                <button type="submit" name="selected" value="{{ option }}" class="option-btn">
+                    {{ option }}
+                </button>
+                {% endfor %}
+            </div>
+        </form>
+
+        <div class="quiz-footer">
+            <a href="/quiz" class="new-quiz-btn">Nova frase</a>
+        </div>
+    </div>
+
+    <div class="quiz-stats">
+        <h4>Como jogar:</h4>
+        <ul>
+            <li>🎵 Leia a frase da Taylor Swift</li>
+            <li>🤔 Escolha qual música ela pertence</li>
+            <li>✨ Veja se acertou!</li>
+            <li>🔄 Continue jogando quantas vezes quiser</li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

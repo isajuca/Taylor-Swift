@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="page-header">
+    <h2>🎵 Todas as Músicas</h2>
+    <p class="page-description">{{ songs|length }} músicas no catálogo</p>
+</div>
+
+<div class="search-section">
+    <details class="search-box">
+        <summary>🔍 Pesquisar música</summary>
+        <div class="search-content">
+            <form method="get" action="/songs" class="search-form">
+                <input 
+                    type="text" 
+                    name="q" 
+                    placeholder="Digite o nome da música..." 
+                    value="{{ request.args.get('q', '') }}"
+                    autocomplete="off"
+                >
+                <button type="submit">Buscar</button>
+            </form>
+            {% if request.args.get('q') %}
+            <div class="search-results-info">
+                Resultados para: "{{ request.args.get('q') }}"
+                <a href="/songs" class="clear-search">✕ Limpar</a>
+            </div>
+            {% endif %}
+        </div>
+    </details>
+</div>
+
+<div class="songs-grid">
+    {% for song in songs %}
+    {% set song_title = song.name or song.title or "Música sem título" %}
+    {% set song_album = song.album or "Álbum desconhecido" %}
+    {% set song_lower = song_title.lower() %}
+    {% set query = request.args.get('q', '').lower() %}
+
+    {# With filtering done in the view, simply show all items passed #}
+    <div class="song-card">
+        <h4>{{ song_title }}</h4>
+        <p class="song-album">{{ song_album }}</p>
+        
+        {% if song.duration %}
+        <span class="song-duration-badge">{{ song.duration }}</span>
+        {% endif %}
+    </div>
+    {% endfor %}
+</div>
+
+<!-- se não encontrar nada -->
+{% if request.args.get('q') and songs|length == 0 %}
+<div class="no-results">
+    <p>😔 Nenhuma música encontrada para "{{ request.args.get('q') }}"</p>
+    <p>Tente pesquisar por outro título ou verifique a ortografia.</p>
+</div>
+{% endif %}
+{% endblock %}
