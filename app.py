@@ -162,8 +162,9 @@ def songs():
 
 @app.route('/quotes')
 def quotes():
+    """Lista todas as frases"""
     try:
-        print("Buscando frases...")
+        print("Buscando quotes...")
         response = requests.get(f"{API_BASE_URL}/quotes", timeout=10)
         
         if response.status_code == 200:

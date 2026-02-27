@@ -33,7 +33,7 @@
 <div class="songs-grid">
     {% for song in songs %}
     {% set song_title = song.name or song.title or "Música sem título" %}
-    {% set song_album = song.album or "Álbum desconhecido" %}
+    {% set song_album = song.album_display or song.album or "Álbum desconhecido" %}
     {% set song_lower = song_title.lower() %}
     {% set query = request.args.get('q', '').lower() %}
 
